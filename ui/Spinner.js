@@ -3,6 +3,8 @@ import { BounceLoader, ClipLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 
 // look at https://www.react-spinners.com/ for more types
+// NOTE: IMPORTING THIS WILL ERROR
+// https://github.com/davidhu2000/react-spinners/issues/430#issuecomment-873717462
 
 const SpinnerType = ({
   type, size, sizeUnit, colour

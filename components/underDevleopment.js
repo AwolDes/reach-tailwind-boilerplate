@@ -8,8 +8,6 @@ const UnderDevelopment = ({ location }) => {
   const [notified, setNotified] = useState(false);
 
   const notifyOrg = () => {
-    // TODO: track this a little bit better?
-    trackEvent({ event: `Voted on building ${location.pathname}` });
     setNotified(true);
   };
 

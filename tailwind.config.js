@@ -1,18 +1,6 @@
 module.exports = {
   theme: {
     extend: {
-      colors: {
-        'sherpa-teal': {
-          200: '#b3ece4',
-          500: '#00BFA6',
-          600: '#00ad97'
-        },
-        'va-green': {
-          500: '#00ffcc',
-          800: '#04d0a7',
-          900: '#03bb96'
-        }
-      },
       // https://tailwindcss.com/course/locking-images-to-a-fixed-aspect-ratio/#app
       spacing: {
         '1/2': '50%',

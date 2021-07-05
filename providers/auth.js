@@ -21,15 +21,13 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     setAuth({ ...savedData });
   }, []);
-  // 2. if object with key TOKEN_KEY exists in localStorage, we are putting its value in auth.data and we set loading to false.
-  // This function will be executed every time component is mounted (every time the user refresh the page);
 
   // TODO: time this out - maybe using a JWT?
+  // Maybe only enable in dev only
   useEffect(() => {
     // setting to undefined will error, so we return null. I love js :)
     localStorage.setItem(TOKEN_KEY, JSON.stringify(auth) || null);
   }, [auth]);
-  // 1. when **auth.data** changes we are setting **auth.data** in localStorage with the key TOKEN_KEY.
 
   return (
     <AuthContext.Provider value={{ auth, setAuthData }}>

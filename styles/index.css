@@ -1,10 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "stripe.css";
-@import "components/sidebar.css";
-@import "components/dashboard.css";
-@import "components/table-scroll.css";
 
 body {
   @apply bg-gray-200;

@@ -8,7 +8,6 @@ const { standardUnit } = reach;
 
 const Connector = () => {
   const { setAuthData, auth } = useContext(AuthContext);
-  // const [balance, setBal] = useState(0);
   const throwError = useAsyncError();
 
   const connectWallet = async () => {

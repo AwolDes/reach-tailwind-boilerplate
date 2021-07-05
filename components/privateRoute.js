@@ -23,7 +23,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={routeProps => auth.data ? (
+      render={routeProps => auth.acc ? (
         <Component {...routeProps} />
       ) : (
         <Redirect to="/login" />

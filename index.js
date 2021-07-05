@@ -19,6 +19,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import './styles/main.css';
 
 const reach = loadStdlib('ALGO');
+// see https://github.com/reach-sh/reach-lang/issues/152#issuecomment-853463058
 reach.setSignStrategy('AlgoSigner');
 
 const withErrorBoundary = Component => props => (

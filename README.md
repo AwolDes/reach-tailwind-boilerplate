@@ -1,6 +1,9 @@
 # reach-tailwind-boilerplate
 Reach + React &amp; Tailwind for building dApps with Algorand!
 
+# How to Run
+
+`yarn start`
 # Algo Signer devnet
 https://docs.reach.sh/guide-browser-testing.html#%28part._.Algorand%29
 
