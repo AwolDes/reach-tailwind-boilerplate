@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
 
   // TODO: time this out - maybe using a JWT?
   // Maybe only enable in dev only
+  // FYI - this does not save the complete object. It will remove functions like deploy
   useEffect(() => {
     // setting to undefined will error, so we return null. I love js :)
     localStorage.setItem(TOKEN_KEY, JSON.stringify(auth) || null);

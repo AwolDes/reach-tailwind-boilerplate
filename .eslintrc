@@ -5,6 +5,9 @@
     "React": "writable"
   },
   "rules": {
+      "react/prefer-stateless-function": "warn",
+      "react/no-unused-state": "warn",
+      "max-classes-per-file": "warn",
       "react/react-in-jsx-scope": "off",
       "global-require": 0,
       "new-cap": [2, {"capIsNew": false, "newIsCap": true}],
