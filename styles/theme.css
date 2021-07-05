@@ -1,0 +1,31 @@
+.first-color { 
+	background: #331940; 
+}
+
+.second-color { 
+	background: #5e366a; 
+}
+
+.third-color { 
+	background: #0cca98; 
+}
+
+.fourth-color { 
+	background: #00ffcc; 
+}
+
+.primary-text-color { 
+	color: #212121; 
+}
+
+.secondary-text-color { 
+	color: #757575; 
+}
+
+.divider-color { 
+	color: #BDBDBD; 
+}
+
+.icon-color { 
+	color: #000000; 
+}

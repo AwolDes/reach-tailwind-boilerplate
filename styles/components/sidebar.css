@@ -1,0 +1,52 @@
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.with-sidebar {
+  overflow: hidden;
+}
+
+.with-sidebar > * > * {
+  /* ↓ applies to both elements */
+  margin: 0.5rem;
+}
+
+.sidebar {
+  /* Note: can cause a weird bug */
+  flex-basis: 20rem;
+  flex-grow: 1;
+  @media only screen and (max-width: 765px) {
+    flex-grow: 0;
+    flex-basis: 0rem;
+  }
+}
+
+.not-sidebar {
+  /* ↓ grow from nothing */
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem);
+}
+
+.sidebar-link {
+  @apply block py-1 pl-1 align-middle text-gray-800 no-underline border-b-2 border-gray-800;
+  &:hover { 
+    @apply text-va-green-500 border-va-green-500;
+  }
+  span {
+    @apply pb-1 text-xs text-gray-600 block inline;
+  }
+}
+
+.sidebar-link--active {
+  /* @apply block py-1 pl-1 align-middle text-white no-underline */
+  @apply block py-1 pl-1 align-middle text-white no-underline border-b-2 border-va-green-500;
+  &:hover {
+    hover:text-white
+  }
+  span {
+    @apply pb-1 text-xs text-white block inline;
+  }
+}

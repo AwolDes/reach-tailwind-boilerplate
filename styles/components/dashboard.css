@@ -1,0 +1,17 @@
+.dashboard {
+  &-text {
+    @apply px-2 inline-flex text-xs leading-5 font-semibold rounded-full;
+  }
+  &-text--critical {
+    @apply bg-red-700 text-white;
+  }
+  &-text--alert {
+    @apply bg-red-600 text-white;
+  }
+  &-text--warning {
+    @apply bg-orange-500 text-white;
+  }
+  &-text--good {
+    @apply bg-va-green-800 text-white;
+  }
+}
