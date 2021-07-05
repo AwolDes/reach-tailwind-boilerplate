@@ -3,32 +3,14 @@ import PropTypes from 'prop-types';
 
 export const AuthContext = createContext({});
 
-const TOKEN_KEY = 'xbacked-store';
-
-// AuthProvider in this case will simply have the account
-// object from connector
+// Unfortunately this data cannot be persisted in local storage
+// AuthProvider in this case will simply have the wallet object from reach
 const AuthProvider = ({ children }) => {
-  const savedData = JSON.parse(localStorage.getItem(TOKEN_KEY)) || null;
-
-  const [auth, setAuth] = useState({
-    ...savedData
-  });
+  const [auth, setAuth] = useState({});
 
   const setAuthData = (data) => {
     setAuth({ ...data });
   };
-
-  useEffect(() => {
-    setAuth({ ...savedData });
-  }, []);
-
-  // TODO: time this out - maybe using a JWT?
-  // Maybe only enable in dev only
-  // FYI - this does not save the complete object. It will remove functions like deploy
-  useEffect(() => {
-    // setting to undefined will error, so we return null. I love js :)
-    localStorage.setItem(TOKEN_KEY, JSON.stringify(auth) || null);
-  }, [auth]);
 
   return (
     <AuthContext.Provider value={{ auth, setAuthData }}>
