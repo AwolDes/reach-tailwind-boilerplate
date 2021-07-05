@@ -4,6 +4,7 @@ import { useAsyncError } from './utils/hooks';
 import { AuthContext } from './providers/auth';
 
 const reach = loadStdlib('ALGO');
+const { standardUnit } = reach;
 
 const Connector = () => {
   const { setAuthData, auth } = useContext(AuthContext);
@@ -33,7 +34,7 @@ const Connector = () => {
           <button className="p-2 bg-black text-white my-4" onClick={() => disconnectWallet()}>
             Disconnect Wallet
           </button>
-          <p>Wallet Balance: {auth.bal} </p>
+          <p>Wallet Balance: {auth.bal} {standardUnit}</p>
         </div>
       ) : (
         <button className="p-2 bg-black text-white my-4" onClick={() => connectWallet()}>
