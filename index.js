@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -15,10 +15,6 @@ import Faucet from './faucet';
 import MaintenanceMode from './components/maintenance';
 import ErrorBoundary from './components/ErrorBoundary';
 
-/* remove these component to start fresh */
-import Deployer from './rock-paper-scissors/deployer';
-import Attacher from './rock-paper-scissors/attacher';
-
 import './styles/main.css';
 
 const reach = loadStdlib('ALGO');
@@ -28,6 +24,13 @@ reach.setSignStrategy('AlgoSigner');
 const withErrorBoundary = Component => props => (
   <ErrorBoundary>
     <Component {...props} />
+  </ErrorBoundary>
+);
+
+const withWallet = Component => props => (
+  <ErrorBoundary>
+    <Connector />
+    <Component />
   </ErrorBoundary>
 );
 
@@ -47,9 +50,7 @@ ReactDOM.render(
           {/* switch required for not found to work */}
           <Switch>
             <Route exact path="/" render={withErrorBoundary(Connector)} />
-            <Route exact path="/faucet" render={withErrorBoundary(Faucet)} />
-            <Route exact path="/deployer" render={withErrorBoundary(Deployer)} />
-            <Route exact path="/attacher" render={withErrorBoundary(Attacher)} />
+            <Route exact path="/faucet" render={withWallet(Faucet)} />
             <Route component={NotFound} />
           </Switch>
         </AuthProvider>

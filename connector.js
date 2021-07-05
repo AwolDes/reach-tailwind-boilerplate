@@ -24,7 +24,7 @@ const Connector = () => {
 
   const disconnectWallet = () => {
     setAuthData(null);
-  }
+  };
 
   return (
     <div className="p-2">

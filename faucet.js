@@ -24,18 +24,16 @@ const Faucet = () => {
       setAmount(0);
       setFunding(false);
     } catch (e) {
-      throwError(e.message)
+      throwError(e.message);
     }
   };
 
   return (
     <div>
       <h1 className="text-2xl">Faucet for Local Testnet</h1>
-      <Connector />
       {auth.acc && (
         <div className="p-2">
           <h2 className="text-lg">Fund account</h2>
-          <p>Balance: {auth.bal} {standardUnit}</p>
           <p>Would you like to fund your account with additional {standardUnit}?</p>
           <input
             type="number"
