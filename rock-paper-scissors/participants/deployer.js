@@ -28,12 +28,14 @@ class Deployer extends Player {
     this.setState({ view: 'Deploying', ctc });
     this.wager = reach.parseCurrency(this.state.wager); // UInt
     backend.Alice(ctc, this);
-    const ctcInfoStr = JSON.stringify(ctc.getInfo(), null, 2);
+    const ctcInfoStr = JSON.stringify(await ctc.getInfo(), null, 2);
+    console.log(`CTC: ${JSON.stringify(ctc)}`);
+    console.log(`info str: ${ctcInfoStr}`);
     this.setState({ view: 'WaitingForAttacher', ctcInfoStr });
   }
 
   render() {
-    return console.log(this.context) || renderView(this, DeployerViews);
+    return renderView(this, DeployerViews);
   }
 }
 
