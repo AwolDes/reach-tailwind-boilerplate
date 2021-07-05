@@ -14,7 +14,10 @@ import Connector from './connector';
 import Faucet from './faucet';
 import MaintenanceMode from './components/maintenance';
 import ErrorBoundary from './components/ErrorBoundary';
-// import UnderDevelopment from './client/src/components/underDevleopment';
+
+/* remove these component to start fresh */
+import Deployer from './rock-paper-scissors/deployer';
+import Attacher from './rock-paper-scissors/attacher';
 
 import './styles/main.css';
 
@@ -45,6 +48,8 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" render={withErrorBoundary(Connector)} />
             <Route exact path="/faucet" render={withErrorBoundary(Faucet)} />
+            <Route exact path="/deployer" render={withErrorBoundary(Deployer)} />
+            <Route exact path="/attacher" render={withErrorBoundary(Attacher)} />
             <Route component={NotFound} />
           </Switch>
         </AuthProvider>

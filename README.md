@@ -1,6 +1,15 @@
 # reach-tailwind-boilerplate
 Reach + React &amp; Tailwind for building dApps with Algorand!
 
+# What is this?
+This is a really simple boilerplate repo that has the following:
+- Connect to AlgoSigner by default (require chrome)
+- An auth provider that uses an account instead of typical auth (like JWT)
+- Use a testnet faucet (visit `/faucet`)
+- React & Tailwind CSS
+- Some helper features like a maintenance page, error boundary, and an under developement component
+- Implemntation of Rock, paper, scissors from the Reach tutorial
+
 # How to Run
 
 `yarn start`
