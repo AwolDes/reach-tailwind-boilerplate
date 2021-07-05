@@ -22,12 +22,24 @@ const Connector = () => {
     }
   };
 
+  const disconnectWallet = () => {
+    setAuthData(null);
+  }
+
   return (
     <div className="p-2">
-      <button className="p-2 bg-black text-white my-4" onClick={() => connectWallet()}>
-        Connect Wallet
-      </button>
-      {auth.acc && <p>Wallet Balance: {auth.bal}</p>}
+      {auth.acc ? (
+        <div>
+          <button className="p-2 bg-black text-white my-4" onClick={() => disconnectWallet()}>
+            Disconnect Wallet
+          </button>
+          <p>Wallet Balance: {auth.bal} </p>
+        </div>
+      ) : (
+        <button className="p-2 bg-black text-white my-4" onClick={() => connectWallet()}>
+          Connect Wallet
+        </button>
+      )}
     </div>
   );
 };
